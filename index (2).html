@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DataChat AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>💬 DataChat AI</h1>
+    <p class="subtitle">Upload an Excel or CSV file and ask questions in plain English</p>
+
+    <div id="upload-section">
+      <input type="file" id="datafile" accept=".csv,.xlsx,.xls">
+      <button id="upload-btn">Upload Data</button>
+      <p id="upload-status"></p>
+    </div>
+
+    <div id="preview-section" class="hidden">
+      <h3>Preview</h3>
+      <div id="preview-table"></div>
+    </div>
+
+    <div id="chat-section" class="hidden">
+      <h3>Ask a question</h3>
+      <div id="chat-log"></div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="e.g. What's the average sales? Remove duplicate rows.">
+        <button id="send-btn">Ask</button>
+      </div>
+      <button id="reset-btn" class="reset-btn">🔄 Start Over</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
